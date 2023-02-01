@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}"/>
+
+    <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.min.js}"></script>
+
+    <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+</head>
+<body>
+<h3>About Me</h3>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel-group">
+                <div class="card card-primary border border-primary" style="margin: 20px 0">
+                    <div class="card-header bg-primary text-light">
+<!--                        <h7 class="card-title" th:text="${recipe.description}">Recipe Description Here!</h7>-->
+                        <h7 class="card-title">Recipe Description Here!</h7>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <h7>Languages:</h7>
+                            </div>
+                            <div class="col-md-9">
+                                <ul>
+                                    <li th:remove="all">cat one</li>
+                                    <li th:remove="all">cat two</li>
+<!--                                    <li th:each="category : ${recipe.categories}" th:text="${category.getDescription()}">cat three</li>-->
+                                    <li>Java, JavaScript, Python</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <h7>Frameworks:</h7>
+                            </div>
+                            <div class="col-md-3">
+<!--                                <p th:text="${(recipe.prepTime) + ' Min'}">30 min</p>-->
+                                <p>Spring, Spring Boot, Express.js</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h7>Databases:</h7>
+                            </div>
+                            <div class="col-md-3">
+<!--                                <p th:text="${recipe.difficulty}">Easy</p>-->
+                                <p>PostgreSQL, Oracle, MS SQL Server</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <h7>Editors:</h7>
+                            </div>
+                            <div class="col-md-3">
+<!--                                <p th:text="${(recipe.cookTime) + ' Min'}">30 min</p>-->
+                                <p>IntelliJ IDEA, Emacs, VSCode, Eclipse</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h7>Operating Systems:</h7>
+                            </div>
+                            <div class="col-md-3">
+<!--                                <p th:text="${recipe.servings}">4</p>-->
+                                <p>Ubuntu, Linux, Windows</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <h7>CI/CD:</h7>
+                            </div>
+                            <div class="col-md-3">
+<!--                                <p th:text="${recipe.source}">30 min</p>-->
+                                <p>GitHub Actions, CircleCI</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h7>URL:</h7>
+                            </div>
+                            <div class="col-md-3">
+<!--                                <p th:text="${recipe.url}">http://www.example.com</p>-->
+                                <p>https://github.com/TergelEnkhtur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<style>
+    h7{
+        font-weight: bold;
+    }
+</style>
