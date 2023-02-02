@@ -1,17 +1,17 @@
 package com.springframework.portfoliowebsite.bootstrap;
 
-import com.springframework.portfoliowebsite.domain.Item;
-import com.springframework.portfoliowebsite.repositories.ItemRepository;
+import com.springframework.portfoliowebsite.domain.AboutMe;
+import com.springframework.portfoliowebsite.repositories.AboutMeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
 
-    private final ItemRepository itemRepository;
+    private final AboutMeRepository aboutMeRepository;
 
-    public BootStrapData(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+    public BootStrapData(AboutMeRepository aboutMeRepository) {
+        this.aboutMeRepository = aboutMeRepository;
     }
 
     @Override
@@ -19,12 +19,17 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println("Started in Bootstrap");
 
-        Item java = new Item();
-        java.setName("Java");
+        AboutMe aboutMe = new AboutMe();
+        aboutMe.setLanguages("Java, JavaScript, Python");
+        aboutMe.setFrameworks("Spring, Spring Boot, Express.js");
+        aboutMe.setDatabases("PostgreSQL, Oracle, MS SQL Server");
+        aboutMe.setEditors("IntelliJ IDEA, Emacs, VSCode, Eclipse");
+        aboutMe.setOs("Windows, Linux (Ubuntu), MacOS");
+        aboutMe.setCicd("GitHub Actions, CircleCI");
 
-        itemRepository.save(java);
+        aboutMeRepository.save(aboutMe);
 
-        System.out.println("Number of Items: " + itemRepository.count());
-        System.out.println("Name of Item: " + java.getName());
+        System.out.println("Number of aboutMe: " + aboutMeRepository.count());
+        System.out.println("Languages: " + aboutMe.getLanguages());
     }
 }
