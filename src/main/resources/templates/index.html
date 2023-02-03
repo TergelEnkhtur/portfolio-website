@@ -9,6 +9,7 @@
     <script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.min.js}"></script>
 
     <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+
 </head>
 <!--/*@thymesVar id="aboutMe" type="com.springframework.portfoliowebsite.domain.AboutMe"*/-->
 <body>
@@ -20,13 +21,39 @@
                     <div class="card-header bg-primary text-light">
                         <h7 class="card-title" >Welcome</h7>
                     </div>
-                    <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6">
-                                <img class="profile-picture" src="../static/resources/images/profile.jpg" th:src="@{/resources/images/profile.jpg}"/>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="container">
+                                        <div class="col-md-8 px-0">
+                                            <img class="img-fluid" src="../static/resources/images/profile.jpg" th:src="@{/resources/images/profile.jpg}" width="400" height="400"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <h1 class="text-uppercase">Tergel (Terry) Enkhtur</h1>
+                                </div>
+
+                                <div class="col justify-content-left">
+                                    <ul class="list-unstyled">
+                                        <li><h4>Java Developer</h4></li>
+                                        <li><a class="text-link" href="mailto:tergel.e9@gmail.com"><img src="https://img.icons8.com/ios/50/null/apple-mail.png"/>tergel.e9@gmail.com</a></li>
+                                        <li><a class="text-link" href="#"><img src="https://img.icons8.com/fluency-systems-filled/48/null/call-squared.png"/>+1 123 456 7890</a></li>
+                                        <li><a class="text-link" href="http://www.linkedin.com/in/tergel-enkhtur"><img src="https://img.icons8.com/color/48/null/linkedin.png"/>linkedin.com/in/tergel-enkhtur</a></li>
+                                        <li><a class="text-link" href="http://www.github.com/TergelEnkhtur"><img src="https://img.icons8.com/ios-filled/50/null/github.png"/>github.com/TergelEnkhtur</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <!--                            </div>-->
+                        </div> <!-- col -->
+                    </div> <!-- row -->
                 </div>
 
                 <div class="card card-primary border border-primary" style="margin: 20px 0">
@@ -36,48 +63,48 @@
                     </div>
                     <div class="card-body">
                         <tr th:each="aboutMe : ${aboutMes}">
-                        <div class="row justify-content-center">
-                            <div class="col-md-3">
-                                <h7>Languages:</h7>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="row justify-content-center">
+                                <div class="col-md-3">
+                                    <h7>Languages:</h7>
+                                </div>
+                                <div class="col-md-3">
                                     <td th:text="${aboutMe.languages}">Java</td>
+                                </div>
+                                <div class="col-md-3">
+                                    <h7>Frameworks:</h7>
+                                </div>
+                                <div class="col-md-3">
+                                    <td th:text="${aboutMe.frameworks}">Spring</td>
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <h7>Frameworks:</h7>
+                            <div class="row justify-content-center">
+                                <div class="col-md-3">
+                                    <h7>Databases:</h7>
+                                </div>
+                                <div class="col-md-3">
+                                    <td th:text="${aboutMe.databases}">PostgreSQL</td>
+                                </div>
+                                <div class="col-md-3">
+                                    <h7>Editors:</h7>
+                                </div>
+                                <div class="col-md-3">
+                                    <td th:text="${aboutMe.editors}">IntelliJ IDEA</td>
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <td th:text="${aboutMe.frameworks}">Spring</td>
+                            <div class="row justify-content-center">
+                                <div class="col-md-3">
+                                    <h7>Operating Systems:</h7>
+                                </div>
+                                <div class="col-md-3">
+                                    <td th:text="${aboutMe.os}">Windows</td>
+                                </div>
+                                <div class="col-md-3">
+                                    <h7>CI/CD:</h7>
+                                </div>
+                                <div class="col-md-3">
+                                    <td th:text="${aboutMe.cicd}">GutHub Actions</td>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-3">
-                                <h7>Databases:</h7>
-                            </div>
-                            <div class="col-md-3">
-                                <td th:text="${aboutMe.databases}">PostgreSQL</td>
-                            </div>
-                            <div class="col-md-3">
-                                <h7>Editors:</h7>
-                            </div>
-                            <div class="col-md-3">
-                                <td th:text="${aboutMe.editors}">IntelliJ IDEA</td>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-3">
-                                <h7>Operating Systems:</h7>
-                            </div>
-                            <div class="col-md-3">
-                                <td th:text="${aboutMe.os}">Windows</td>
-                            </div>
-                            <div class="col-md-3">
-                                <h7>CI/CD:</h7>
-                            </div>
-                            <div class="col-md-3">
-                                <td th:text="${aboutMe.cicd}">GutHub Actions</td>
-                            </div>
-                        </div>
                         </tr>
                     </div>
                 </div>
