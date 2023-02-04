@@ -11,110 +11,145 @@
     <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 
 </head>
-<!--/*@thymesVar id="aboutMe" type="com.springframework.portfoliowebsite.domain.AboutMe"*/-->
+<!--/*@thymesVar id="candidate" type="com.springframework.portfoliowebsite.domain.Candidate"*/-->
 <body>
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row justify-content-center">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel-group">
-                <div class="card card-primary border border-primary" style="margin: 20px 0;">
-                    <div class="card-header bg-primary text-light">
-                        <h7 class="card-title" >Welcome</h7>
-                    </div>
+                <tr th:each="candidate : ${Candidates}">
+
+                    <div class="card card-primary border border-primary" style="margin: 20px 0;"> <!-- Welcome -->
+                        <div class="card-header bg-primary text-light">
+                            <h7 class="card-title" >Welcome</h7>
+                        </div>
+
+                        <div class="container card-body">
+                            <div class="row">
+                                <div class="col-md-3 px-0 justify-content-center"> <!-- picture -->
+                                    <img class="img-fluid" src="../static/resources/images/profile.jpg" style="width: 230px; height: 300px;" th:src="@{/resources/images/profile.jpg}"/>
+                                </div> <!-- picture// -->
+
+                                <div class="col-md-9"> <!-- info -->
+                                    <div class="card-body">
+                                        <div class="justify-content-center">
+                                            <h1 class="text-uppercase" th:text="${candidate.name}">Terry</h1>
+                                        </div>
+                                        <div class="justify-content-left">
+                                            <ul class="list-unstyled">
+                                                <li><h4 th:text="${candidate.role}">Developer</h4></li>
+                                                <br>
+                                                <li><a class="text-link" href="mailto:tergel.e9@gmail.com"><img src="https://img.icons8.com/ios/34/null/apple-mail.png" th:text="${candidate.email}"/></a></li>
+                                                <li><a class="text-link" href="#"><img src="https://img.icons8.com/fluency-systems-filled/34/null/call-squared.png" th:text="${candidate.phone}"/></a></li>
+                                                <li><a class="text-link" href="http://www.linkedin.com/in/tergel-enkhtur" target="_blank"><img src="https://img.icons8.com/color/34/null/linkedin.png" th:text="${candidate.linkedin}"/></a></li>
+                                                <li><a class="text-link" href="http://www.github.com/TergelEnkhtur" target="_blank"><img src="https://img.icons8.com/ios-filled/34/null/github.png" th:text="${candidate.github}"/></a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- info// -->
+                            </div> <!-- row// -->
+                        </div>
+                    </div> <!-- Welcome ends -->
+
                     <div class="row">
-                        <div class="col">
-                            <div class="card-body">
-                                <div class="row justify-content-center">
-                                    <div class="container">
-                                        <div class="col-md-8 px-0">
-                                            <img class="img-fluid" src="../static/resources/images/profile.jpg" th:src="@{/resources/images/profile.jpg}" width="400" height="400"/>
+                            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                                <div class="card card-primary border border-primary" style="margin: 20px 0"> <!-- About Me -->
+                                    <div class="card-header bg-primary text-light">
+                                        <!--                        <h7 class="card-title" th:text="${recipe.description}">Recipe Description Here!</h7>-->
+                                        <h7 class="card-title">About Me</h7>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-3">
+                                                <h7>Languages:</h7>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <td th:text="${candidate.languages}">Java, JavaScript, Python</td>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h7>Frameworks:</h7>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <td th:text="${candidate.frameworks}">Spring, Spring Boot, Express.js</td>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-3">
+                                                <h7>Databases:</h7>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <td th:text="${candidate.databases}">PostgreSQL, Oracle, MS SQL Server</td>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h7>Editors:</h7>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <td th:text="${candidate.editors}">IntelliJ IDEA, Emacs, VSCode, Eclipse</td>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-3">
+                                                <h7>Operating Systems:</h7>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <td th:text="${candidate.os}">Windows, Linux (Ubuntu), MacOS</td>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h7>CI/CD:</h7>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <td th:text="${candidate.cicd}">GitHub Actions, CircleCI</td>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- About Me ends-->
+
+                                <div class="card card-primary border border-primary" style="margin: 20px 0"> <!-- Projects-->
+                                    <div class="card-header bg-primary text-light">
+                                        <h7 class="card-title">Latest Project</h7>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-0">
+                                                <h7>Latest Project Example Here</h7>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- Projects ends-->
+
+                            </div> <!-- col -->
+
+                            <div class="primary col-md-4 col-sm-12 col-xs-12"> <!-- Skills-->
+                                <div class="card card-primary border border-primary" style="margin: 20px 0">
+                                    <div class="card-header bg-primary text-light">
+                                        <h7 class="card-title">Skills</h7>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-0">
+                                                <h7>List of Skills Here</h7>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div> <!-- Skills/-->
 
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <div class="row justify-content-center">
-                                    <h1 class="text-uppercase">Tergel (Terry) Enkhtur</h1>
-                                </div>
-
-                                <div class="col justify-content-left">
-                                    <ul class="list-unstyled">
-                                        <li><h4>Java Developer</h4></li>
-                                        <li><a class="text-link" href="mailto:tergel.e9@gmail.com"><img src="https://img.icons8.com/ios/50/null/apple-mail.png"/>tergel.e9@gmail.com</a></li>
-                                        <li><a class="text-link" href="#"><img src="https://img.icons8.com/fluency-systems-filled/48/null/call-squared.png"/>+1 123 456 7890</a></li>
-                                        <li><a class="text-link" href="http://www.linkedin.com/in/tergel-enkhtur"><img src="https://img.icons8.com/color/48/null/linkedin.png"/>linkedin.com/in/tergel-enkhtur</a></li>
-                                        <li><a class="text-link" href="http://www.github.com/TergelEnkhtur"><img src="https://img.icons8.com/ios-filled/50/null/github.png"/>github.com/TergelEnkhtur</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <!--                            </div>-->
-                        </div> <!-- col -->
                     </div> <!-- row -->
-                </div>
+            </div> <!-- panel group -->
 
-                <div class="card card-primary border border-primary" style="margin: 20px 0">
-                    <div class="card-header bg-primary text-light">
-                        <!--                        <h7 class="card-title" th:text="${recipe.description}">Recipe Description Here!</h7>-->
-                        <h7 class="card-title">About Me</h7>
-                    </div>
-                    <div class="card-body">
-                        <tr th:each="aboutMe : ${aboutMes}">
-                            <div class="row justify-content-center">
-                                <div class="col-md-3">
-                                    <h7>Languages:</h7>
-                                </div>
-                                <div class="col-md-3">
-                                    <td th:text="${aboutMe.languages}">Java</td>
-                                </div>
-                                <div class="col-md-3">
-                                    <h7>Frameworks:</h7>
-                                </div>
-                                <div class="col-md-3">
-                                    <td th:text="${aboutMe.frameworks}">Spring</td>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-md-3">
-                                    <h7>Databases:</h7>
-                                </div>
-                                <div class="col-md-3">
-                                    <td th:text="${aboutMe.databases}">PostgreSQL</td>
-                                </div>
-                                <div class="col-md-3">
-                                    <h7>Editors:</h7>
-                                </div>
-                                <div class="col-md-3">
-                                    <td th:text="${aboutMe.editors}">IntelliJ IDEA</td>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-md-3">
-                                    <h7>Operating Systems:</h7>
-                                </div>
-                                <div class="col-md-3">
-                                    <td th:text="${aboutMe.os}">Windows</td>
-                                </div>
-                                <div class="col-md-3">
-                                    <h7>CI/CD:</h7>
-                                </div>
-                                <div class="col-md-3">
-                                    <td th:text="${aboutMe.cicd}">GutHub Actions</td>
-                                </div>
-                            </div>
-                        </tr>
-                    </div>
-                </div>
-            </div>
+            </tr>
         </div>
-    </div>
+    </div> <!-- row ends-->
+</div>
 </div>
 </body>
 </html>
 <style>
+    /*helpful to see the boxes*/
+    /** {*/
+    /*    outline: 1px solid red !important;*/
+    /*}*/
     h7{
         font-weight: bold;
     }

@@ -8,11 +8,18 @@ import lombok.Data;
 
 @Data
 @Entity
-public class AboutMe {
+public class Candidate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
+    private String role;
+    private String email;
+    private String phone;
+    private String linkedin;
+    private String github;
 
     private String languages;
     private String frameworks;

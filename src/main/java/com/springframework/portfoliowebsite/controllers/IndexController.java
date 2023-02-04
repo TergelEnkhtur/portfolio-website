@@ -1,6 +1,6 @@
 package com.springframework.portfoliowebsite.controllers;
 
-import com.springframework.portfoliowebsite.repositories.AboutMeRepository;
+import com.springframework.portfoliowebsite.repositories.CandidateRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    private final AboutMeRepository aboutMeRepository;
+    private final CandidateRepository candidateRepository;
 
-    public IndexController(AboutMeRepository aboutMeRepository) {
-        this.aboutMeRepository = aboutMeRepository;
+    public IndexController(CandidateRepository candidateRepository) {
+        this.candidateRepository = candidateRepository;
     }
 
     @RequestMapping({"","/","/index"})
     public String getIndexPage(Model model) {
 
-        model.addAttribute("aboutMes", aboutMeRepository.findAll());
+        model.addAttribute("Candidates", candidateRepository.findAll());
 
         return "index";
     }

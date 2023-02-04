@@ -1,17 +1,17 @@
 package com.springframework.portfoliowebsite.bootstrap;
 
-import com.springframework.portfoliowebsite.domain.AboutMe;
-import com.springframework.portfoliowebsite.repositories.AboutMeRepository;
+import com.springframework.portfoliowebsite.domain.Candidate;
+import com.springframework.portfoliowebsite.repositories.CandidateRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
 
-    private final AboutMeRepository aboutMeRepository;
+    private final CandidateRepository candidateRepository;
 
-    public BootStrapData(AboutMeRepository aboutMeRepository) {
-        this.aboutMeRepository = aboutMeRepository;
+    public BootStrapData(CandidateRepository candidateRepository) {
+        this.candidateRepository = candidateRepository;
     }
 
     @Override
@@ -19,17 +19,25 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println("Started in Bootstrap");
 
-        AboutMe aboutMe = new AboutMe();
-        aboutMe.setLanguages("Java, JavaScript, Python");
-        aboutMe.setFrameworks("Spring, Spring Boot, Express.js");
-        aboutMe.setDatabases("PostgreSQL, Oracle, MS SQL Server");
-        aboutMe.setEditors("IntelliJ IDEA, Emacs, VSCode, Eclipse");
-        aboutMe.setOs("Windows, Linux (Ubuntu), MacOS");
-        aboutMe.setCicd("GitHub Actions, CircleCI");
+        Candidate candidate = new Candidate();
 
-        aboutMeRepository.save(aboutMe);
+        candidate.setName("Tergel (Terry) Enkhtur");
+        candidate.setRole("Java Developer");
+        candidate.setEmail("tergel.e9@gmail.com");
+        candidate.setPhone("+1 123 456 7890");
+        candidate.setLinkedin("linkedin.com/in/tergel-enkhtur");
+        candidate.setGithub("github.com/TergelEnkhtur");
 
-        System.out.println("Number of aboutMe: " + aboutMeRepository.count());
-        System.out.println("Languages: " + aboutMe.getLanguages());
+        candidate.setLanguages("Java, JavaScript, Python");
+        candidate.setFrameworks("Spring, Spring Boot, Express.js");
+        candidate.setDatabases("PostgreSQL, Oracle, MS SQL Server");
+        candidate.setEditors("IntelliJ IDEA, Emacs, VSCode, Eclipse");
+        candidate.setOs("Windows, Linux (Ubuntu), MacOS");
+        candidate.setCicd("GitHub Actions, CircleCI");
+
+        candidateRepository.save(candidate);
+
+        System.out.println("Number of candidate: " + candidateRepository.count());
+        System.out.println("Languages: " + candidate.getLanguages());
     }
 }
