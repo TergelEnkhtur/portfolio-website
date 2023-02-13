@@ -24,7 +24,7 @@ public class BootStrapData implements CommandLineRunner {
         candidate.setName("Tergel (Terry) Enkhtur");
         candidate.setRole("Java Developer");
         candidate.setEmail("tergel.e9@gmail.com");
-        candidate.setPhone("+1 123 456 7890");
+        candidate.setPhone("+1 872 240 6609");
         candidate.setLinkedin("linkedin.com/in/tergel-enkhtur");
         candidate.setGithub("github.com/TergelEnkhtur");
 
