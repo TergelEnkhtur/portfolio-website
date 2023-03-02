@@ -20,11 +20,30 @@ public class Candidate {
     private String phone;
     private String linkedin;
     private String github;
+    private String pitch;
 
-    private String languages;
+    private String programming;
     private String frameworks;
     private String databases;
-    private String editors;
+    private String frontend;
     private String os;
     private String cicd;
+
+    private String project1desc;
+    private String project1tech;
+    private String project2desc;
+    private String project2tech;
+
+    private String skill1;
+    private String skill2;
+    private String skill3;
+    private String skill4;
+    private String skill5;
+
+    private String major;
+    private String minor;
+    private String concentration;
+    private String SchoolName;
+    private String SchoolLoc;
+    private String SchoolYears;
 }

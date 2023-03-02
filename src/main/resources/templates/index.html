@@ -43,6 +43,7 @@
                                                 <li><a class="text-link" href="#"><img src="https://img.icons8.com/fluency-systems-filled/34/null/call-squared.png" th:text="${candidate.phone}"/></a></li>
                                                 <li><a class="text-link" href="http://www.linkedin.com/in/tergel-enkhtur" target="_blank"><img src="https://img.icons8.com/color/34/null/linkedin.png" th:text="${candidate.linkedin}"/></a></li>
                                                 <li><a class="text-link" href="http://www.github.com/TergelEnkhtur" target="_blank"><img src="https://img.icons8.com/ios-filled/34/null/github.png" th:text="${candidate.github}"/></a></li>
+                                                <li><a class="text-link" href="https://docs.google.com/document/d/e/2PACX-1vQHOc39uJCspYRnKOhCFem8AE3WHuejt5fOIpapAIMyhY4Zdi5jcXIebVPOfImJew/pub" target="_blank"><img src="https://img.icons8.com/ios/34/null/parse-from-clipboard.png"/>Download Resume</a></li>
                                             </ul>
                                         </div>
 
@@ -50,6 +51,7 @@
                                 </div> <!-- info// -->
                             </div> <!-- row// -->
                         </div>
+
                     </div> <!-- Welcome ends -->
 
                     <div class="row">
@@ -61,16 +63,17 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="row justify-content-center">
+                                            <p th:text="${candidate.pitch}">Pitch</p>
                                             <div class="col-md-3">
-                                                <h7>Languages:</h7>
+                                                <h7>Programming:</h7>
                                             </div>
-                                            <div class="col-md-3">
-                                                <td th:text="${candidate.languages}">Java, JavaScript, Python</td>
+                                            <div class="col-md-9">
+                                                <td th:text="${candidate.programming}">Java, JavaScript, Python</td>
                                             </div>
                                             <div class="col-md-3">
                                                 <h7>Frameworks:</h7>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-9">
                                                 <td th:text="${candidate.frameworks}">Spring, Spring Boot, Express.js</td>
                                             </div>
                                         </div>
@@ -78,28 +81,28 @@
                                             <div class="col-md-3">
                                                 <h7>Databases:</h7>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-9">
                                                 <td th:text="${candidate.databases}">PostgreSQL, Oracle, MS SQL Server</td>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <h7>Editors:</h7>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <td th:text="${candidate.editors}">IntelliJ IDEA, Emacs, VSCode, Eclipse</td>
-                                            </div>
-                                        </div>
-                                        <div class="row justify-content-center">
-                                            <div class="col-md-3">
-                                                <h7>Operating Systems:</h7>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <td th:text="${candidate.os}">Windows, Linux (Ubuntu), MacOS</td>
                                             </div>
                                             <div class="col-md-3">
                                                 <h7>CI/CD:</h7>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-9">
                                                 <td th:text="${candidate.cicd}">GitHub Actions, CircleCI</td>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h7>Frontend:</h7>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <td th:text="${candidate.frontend}">HTML, CSS, jQuery</td>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-3">
+                                                <h7>OS:</h7>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <td th:text="${candidate.os}">Windows, Linux (Ubuntu), MacOS</td>
                                             </div>
                                         </div>
                                     </div>
@@ -107,12 +110,46 @@
 
                                 <div class="card card-primary border border-primary" style="margin: 20px 0"> <!-- Projects-->
                                     <div class="card-header bg-primary text-light">
-                                        <h7 class="card-title">Latest Project</h7>
+                                        <h7 class="card-title">Project Showcase</h7>
                                     </div>
                                     <div class="card-body">
                                         <div class="row justify-content-center">
                                             <div class="col-md-0">
-                                                <h7>Latest Project Example Here</h7>
+                                                <div class="col-md-12 px-0 justify-content-center"> <!-- picture -->
+                                                    <img class="img-fluid" src="../static/resources/images/Portfolio%20Website.png" th:src="@{/resources/images/Portfolio Website.png}"/>
+                                                </div> <!-- picture// -->
+                                                <button type="button" class="btn btn-info" href="https://github.com/TergelEnkhtur/portfolio-website" target="_blank" title="Portfolio Website">Portfolio Website</button>
+                                                <div class="col-md-2">
+                                                    <h7>Description:</h7>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <td th:text="${candidate.project1desc}">Project1</td>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <h7>Tech Stack:</h7>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <td th:text="${candidate.project1tech}">Project1</td>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-0">
+                                                <div class="col-md-12 px-0 justify-content-center"> <!-- picture -->
+                                                    <img class="img-fluid" src="../static/resources/images/CRUD-App.png" th:src="@{/resources/images/CRUD-App.png}"/>
+                                                </div> <!-- picture// -->
+                                                <button type="button" class="btn btn-info" href="https://github.com/TergelEnkhtur/CRUD-App" target="_blank" title="CRUD-App">CRUD-App</button>
+                                                <div class="col-md-2">
+                                                    <h7>Description:</h7>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <td th:text="${candidate.project2desc}">Project2</td>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <h7>Tech Stack:</h7>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <td th:text="${candidate.project2tech}">Project2</td>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -120,20 +157,43 @@
 
                             </div> <!-- col -->
 
-                            <div class="primary col-md-4 col-sm-12 col-xs-12"> <!-- Skills-->
-                                <div class="card card-primary border border-primary" style="margin: 20px 0">
+                            <div class="primary col-md-4 col-sm-12 col-xs-12"> <!-- Sidebar-->
+                                <div class="card card-primary border border-primary" style="margin: 20px 0"> <!-- Skills-->
                                     <div class="card-header bg-primary text-light">
                                         <h7 class="card-title">Skills</h7>
                                     </div>
                                     <div class="card-body">
-                                        <div class="row justify-content-center">
-                                            <div class="col-md-0">
-                                                <h7>List of Skills Here</h7>
-                                            </div>
-                                        </div>
+                                            <h7>Professional Skills</h7>
+
+                                            <ul class="list-unstyled">
+                                                <li th:text="${candidate.skill1}">Skill</li>
+                                                <li th:text="${candidate.skill2}">Skill</li>
+                                                <li th:text="${candidate.skill3}">Skill</li>
+                                                <li th:text="${candidate.skill4}">Skill</li>
+                                                <li th:text="${candidate.skill5}">Skill</li>
+                                            </ul>
                                     </div>
-                                </div>
-                            </div> <!-- Skills/-->
+                                </div> <!-- Skills/-->
+
+                                <div class="card card-primary border border-primary" style="margin: 20px 0"> <!-- Education-->
+                                    <div class="card-header bg-primary text-light">
+                                        <h7 class="card-title">Education</h7>
+                                    </div>
+                                    <div class="card-body">
+                                        <h7 th:text="${candidate.major}">BS</h7>
+
+                                        <ul class="list-unstyled">
+                                            <li th:text="'Minor: ' + ${candidate.minor}">School</li>
+                                            <li th:text="'Concentration: ' + ${candidate.concentration}">School</li>
+                                            <br>
+                                            <li th:text="${candidate.schoolName}">School</li>
+                                            <li th:text="${candidate.schoolLoc}">School</li>
+                                            <li th:text="${candidate.schoolYears}">School</li>
+                                        </ul>
+                                    </div>
+                                </div> <!-- Education/-->
+
+                            </div> <!-- Sidebar/-->
 
                     </div> <!-- row -->
             </div> <!-- panel group -->
